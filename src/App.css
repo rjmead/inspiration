@@ -1,0 +1,17 @@
+body {
+    background-color: #DADADA;
+}
+#root, #root>.grid{
+    height: 100%;
+    margin: 0;
+}
+
+.App{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.column {
+    max-width: 450px;
+}
