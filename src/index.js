@@ -48,15 +48,10 @@ class App extends React.Component {
     }
 
     getNextImg() {
-        console.log('getting next img')
         const nextIndex = this.state.imageIndex + 1
-        if (nextIndex > this.state.imageList.length){
+        if (nextIndex >= this.state.imageList.length){
             console.log('getImageList')
-            this.getImageList(this.state.page + 1).then(() => {
-                this.setState({
-                    bgImgURL: this.state.imageList[0].urls.regular
-                })
-            })
+            this.getImageList(this.state.page + 1)
         } else {
             console.log('not getImageList')
             this.setState({
@@ -68,13 +63,11 @@ class App extends React.Component {
 
     getNextQuote = () => {
         const rand = Math.floor(Math.random() * this.state.quotes.length)
+        this.setState({ curQuote: this.state.quotes[rand] })
         this.getNextImg()
-        this.setState({curQuote: this.state.quotes[rand]})
-        console.log('Getting next quote...')
     }
 
     render() {
-        console.log('rendering')
         const bgStyle = {backgroundImage: `url(${this.state.bgImgURL})`}
         return (
             <div className="App ui middle aligned center aligned grid" style={bgStyle}>
