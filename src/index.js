@@ -48,6 +48,10 @@ class App extends React.Component {
     }
 
     getNextImg() {
+        // set body background URL to hide gray flash
+        document.body.style.backgroundImage = `url(${this.state.bgImgURL})`
+
+        // get next url and update it
         const nextIndex = this.state.imageIndex + 1
         if (nextIndex >= this.state.imageList.length){
             console.log('getImageList')
