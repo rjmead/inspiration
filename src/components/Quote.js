@@ -1,12 +1,10 @@
 import React from 'react'
 
-const Quote = () => {
+const Quote = ({ quote }) => {
     return (
-        <div className="Quote ui centered card">
-            <div className="content">
-                <i className="leaf icon"></i>
-                Sup
-            </div>
+        <div className="ui message">
+            <h1 className="ui header">{quote.text}</h1>
+            <h3>{quote.author}</h3>
         </div>
     )
 }
