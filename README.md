@@ -10,5 +10,6 @@ and quotes are from: https://type.fit/api/quotes
 
 > npm start
 
-30 images returned per request
+-30 images returned per request
+-Request only made on load and every 29th image
 (api can only accept 50 requests per hour, please don't abuse)
